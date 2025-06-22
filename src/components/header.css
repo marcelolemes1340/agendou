@@ -1,0 +1,40 @@
+/* header.css */
+.header {
+    background-color: rgb(2, 2, 2);
+    padding: 1rem;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header-img {
+    height: 32px;
+    width: 100px;
+}
+
+.header-links {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header-link {
+    font-size: 14px;
+    color: rgb(252, 252, 255);
+    text-decoration: none;
+}
