@@ -10,8 +10,9 @@ export function Header() {
 
                 </Link>
                 <div className="header-links">
-                    <span className="header-link">Login</span>
-                    <Link href="/login" className="header-link">Cadastro</Link>
+                    <Link href="/login" className="header-link">Login</Link>
+                    <Link href="/cadastro" className="header-link">Cadastro</Link>
+
                 </div>
             </div>
         </nav>
