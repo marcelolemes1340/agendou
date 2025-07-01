@@ -41,7 +41,7 @@ export default function Agendamento() {
         <div className="agendamento-container">
             <h1>Agendar Serviço</h1>
             <form onSubmit={handleAgendar}>
-                <label>Serviço</label>
+            <label>Serviço</label>
                 <select name="servico" value={form.servico} onChange={handleChange}>
                     <option>Corte de cabelo</option>
                     <option>Barba</option>
