@@ -235,7 +235,7 @@ export default function Principal() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="bg-indigo-700 p-6 rounded-lg">
-                <p className="italic mb-4">"{testimonial.quote}"</p>
+                <p className="italic mb-4">{testimonial.quote}</p>
                 <p className="font-semibold">{testimonial.author}</p>
                 <p className="text-indigo-200 text-sm">{testimonial.role}</p>
               </div>
