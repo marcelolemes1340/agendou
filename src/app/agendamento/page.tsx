@@ -37,7 +37,7 @@ export default function Agendamento() {
     useEffect(() => {
         const fetchAgendamentos = async () => {
             try {
-                const response = await fetch('http://localhost:3001/agendamentos');
+                const response = await fetch('https://back-theta-nine.vercel.app/agendamentos');
                 const data = await response.json();
                 setAgendamentos(data);
                 setLoading(false);
@@ -191,7 +191,7 @@ export default function Agendamento() {
         }
 
         try {
-            const response = await fetch('http://localhost:3001/agendamentos', {
+            const response = await fetch('https://back-theta-nine.vercel.app/agendamentos', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(form),
