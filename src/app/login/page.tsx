@@ -42,6 +42,7 @@ export default function Login() {
                 });
             }
         } catch (err) {
+            console.error('Erro ao fazer login:', err);
             await Swal.fire({
                 title: 'Erro!',
                 text: 'Erro de conexão com o servidor',
