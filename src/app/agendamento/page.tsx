@@ -79,7 +79,7 @@ export default function Agendamento() {
     function hasUserAppointmentSameDay() {
         if (!userEmail || !form.data) return false;
         return agendamentos.some(
-            (ag: any) =>
+            (ag: { nome: string; data: string }) =>
                 ag.nome === userName &&
                 ag.data === form.data
         );
@@ -89,7 +89,7 @@ export default function Agendamento() {
         if (!form.data || !form.horario || !form.profissional) return true;
 
         return !agendamentos.some(
-            (ag: any) =>
+            (ag: { data: string; horario: string; profissional: string }) =>
                 ag.data === form.data &&
                 ag.horario === form.horario &&
                 ag.profissional === form.profissional
@@ -100,7 +100,7 @@ export default function Agendamento() {
         if (!form.data || !form.horario) return true;
 
         const appointmentsAtSameTime = agendamentos.filter(
-            (ag: any) =>
+            (ag: { data: string; horario: string }) =>
                 ag.data === form.data &&
                 ag.horario === form.horario
         );
@@ -113,13 +113,13 @@ export default function Agendamento() {
 
         return availableTimes.filter(time => {
             const appointmentsAtSameTime = agendamentos.filter(
-                (ag: any) =>
+                (ag: { data: string; horario: string }) =>
                     ag.data === form.data &&
                     ag.horario === time
             );
 
             const barberOccupied = agendamentos.some(
-                (ag: any) =>
+                (ag: { data: string; horario: string; profissional: string }) =>
                     ag.data === form.data &&
                     ag.horario === time &&
                     ag.profissional === form.profissional

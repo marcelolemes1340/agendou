@@ -32,6 +32,8 @@ export default function Principal() {
     if (userData) {
       const user = JSON.parse(userData);
       setIsLoggedIn(true);
+      console.log('Usuário logado:', userName);
+      console.log('isLoggedIn:', isLoggedIn);
       setUserName(user.nome.split(' ')[0]);
     }
   }, []);
