@@ -1,11 +1,11 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 
 export default function Agendamento() {
     const router = useRouter();
-    const searchParams = useSearchParams();
+//    const searchParams = useSearchParams();
     const [userName, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [agendamentos, setAgendamentos] = useState([]);
@@ -27,8 +27,8 @@ export default function Agendamento() {
     }
 
     const [form, setForm] = useState({
-        servico: searchParams.get('service') || 'Corte de Cabelo',
-        profissional: searchParams.get('professional') || 'Roberto',
+        servico:  'Corte de Cabelo',
+        profissional:'Roberto',
         data: '',
         horario: '10:00',
         nome: '',
