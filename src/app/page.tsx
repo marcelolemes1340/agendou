@@ -46,7 +46,7 @@ export default function Principal() {
   ];
 
   const professionals: Professional[] = [
-    { name: 'Roberto', specialty: 'Cortes Clássicos', rating: '⭐ 4.9', type: 'professional', photo: '/barbeiro.jpg' },
+    { name: 'Roberto', specialty: 'Cortes Clássicos', rating: '⭐ 4.9', type: 'professional', photo: '/barbeiro1.jpg' },
     { name: 'Marcelo', specialty: 'Barba e Design', rating: '⭐ 5.0', type: 'professional', photo: '/barbeiro2.jpg' },
     { name: 'Lucas', specialty: 'Estilos Modernos', rating: '⭐ 4.8', type: 'professional', photo: '/barbeiro3.jpg' }
   ];
