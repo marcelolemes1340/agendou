@@ -1,13 +1,12 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Header } from "@/components/Header";
-import Main from '@/components/Main';
-import Footer from '@/components/Footer';
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Revenda Avenida",
-  description: "Revenda de veiculos em Pelotas-RS",
-  keywords: ['Revenda', 'Carros', 'Veículos', 'Veículos usados']
+  title: "Barbearia Agendou",
+  description: "Barbearia em Pelotas-RS",
+  keywords: ["Barbearia", "Agendamento", "Serviços", "Corte de Cabelo", "Barba"],
 };
 
 export default function RootLayout({
@@ -17,12 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-br">
-      <body>
+      <body suppressHydrationWarning={true}>
         <Header />
-        <Main />
-        <Footer />
         {children}
+        <Footer />
       </body>
     </html>
   );
 }
+
+
