@@ -14,7 +14,7 @@ export default function Cadastro() {
     async function handleCadastro(e: React.FormEvent) {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/usuarios/cadastro', {
+            const response = await fetch('https://back-theta-nine.vercel.app/usuarios/cadastro', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ nome, email, senha }),

@@ -11,7 +11,7 @@ export default function Login() {
      async function handleLogin(e: React.FormEvent) {
         e.preventDefault();
         try {
-            const response = await fetch('http://localhost:3001/usuarios/login', {
+            const response = await fetch('https://back-theta-nine.vercel.app/usuarios/login', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ email, senha }),
