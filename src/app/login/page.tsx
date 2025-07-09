@@ -31,7 +31,7 @@ export default function Login() {
                 router.push('/');
                 setTimeout(() => {
                     window.location.reload();
-                }, 300);
+                }, 700);
             } else {
                 await Swal.fire({
                     title: 'Erro!',
