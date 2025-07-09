@@ -29,6 +29,9 @@ export default function Login() {
                 });
                 localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
                 router.push('/');
+                setTimeout(() => {
+                    window.location.reload();
+                }, 300);
             } else {
                 await Swal.fire({
                     title: 'Erro!',
