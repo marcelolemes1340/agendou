@@ -28,10 +28,7 @@ export default function Login() {
                     confirmButtonColor: '#4f46e5',
                 });
                 localStorage.setItem('usuarioLogado', JSON.stringify(data.usuario));
-                router.push('/agendamento');
-                setTimeout(() => {
-                    window.location.reload();
-                }, 300);
+                router.push('/');
             } else {
                 await Swal.fire({
                     title: 'Erro!',
