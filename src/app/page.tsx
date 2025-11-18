@@ -42,6 +42,7 @@ export default function Principal() {
           setIsLoggedIn(true);
           setUserName(user.nome.split(' ')[0]);
         } catch (error) {
+          console.error('Erro ao analisar os dados do usuário:', error);
           setIsLoggedIn(false);
           setUserName('');
         }

@@ -1,6 +1,5 @@
 'use client';
 import React, { useState, useEffect } from 'react';
-import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
 import { cores } from '@/lib/cores';
 import Link from 'next/link';
@@ -14,7 +13,7 @@ interface FormData {
 }
 
 export default function Contato() {
-    const router = useRouter();
+    
     const [formData, setFormData] = useState<FormData>({
         nome: '',
         email: '',
@@ -167,7 +166,7 @@ export default function Contato() {
                     color: cores.neutral.white,
                 });
             }
-        } catch (error: any) {
+        } catch (error ) {
             await Swal.fire({
                 title: 'Erro de Conexão',
                 text: 'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',

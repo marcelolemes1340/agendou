@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
-import { getAuthHeaders, getUsuarioLogado, verifyToken, forceNewLogin } from '../../lib/auth';
+import { getAuthHeaders, getUsuarioLogado, verifyToken } from '../../lib/auth';
 import { cores } from '../../lib/cores';
 
 interface Avaliacao {
@@ -23,7 +23,7 @@ export default function MinhasAvaliacoes() {
     const router = useRouter();
     const [avaliacoes, setAvaliacoes] = useState<Avaliacao[]>([]);
     const [loading, setLoading] = useState(true);
-    const [usuario, setUsuario] = useState<any>(null);
+    const [, setUsuario] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const [excluindo, setExcluindo] = useState<number | null>(null);
 
@@ -381,7 +381,7 @@ export default function MinhasAvaliacoes() {
                                                     Seu Comentário:
                                                 </h4>
                                                 <p className="text-gray-300 text-sm leading-relaxed">
-                                                    "{avaliacao.comentario}"
+                                                    {avaliacao.comentario}
                                                 </p>
                                             </div>
                                         )}

@@ -78,6 +78,7 @@ export default function Perfil() {
                 });
 
             } catch (error) {
+                console.error('Erro ao carregar o perfil:', error);
                 await Swal.fire({
                     title: 'Erro!',
                     text: 'Erro ao carregar perfil. Tente novamente.',
@@ -212,6 +213,7 @@ export default function Perfil() {
                 });
             }
         } catch (error) {
+            console.error('Erro ao atualizar o perfil:', error);
             await Swal.fire({
                 title: 'Erro de Conexão!',
                 text: 'Não foi possível conectar ao servidor.',
@@ -307,6 +309,7 @@ export default function Perfil() {
                 });
             }
         } catch (error) {
+            console.error('Erro ao alterar senha:', error);
             await Swal.fire({
                 title: 'Erro de Conexão!',
                 text: 'Não foi possível conectar ao servidor.',

@@ -45,7 +45,7 @@ export default function Login() {
 
             console.log('📥 Resposta do login:', response.status);
 
-            const data = await response.json().catch(async (error) => {
+            const data = await response.json().catch(async () => {
                 const text = await response.text();
                 console.error('❌ Erro ao parsear resposta:', text);
                 throw new Error('Resposta inválida do servidor');
@@ -92,11 +92,11 @@ export default function Login() {
                     color: cores.neutral.white,
                 });
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('💥 Erro ao fazer login:', error);
             await Swal.fire({
                 title: 'Erro de Conexão!',
-                text: error.message || 'Não foi possível conectar ao servidor. Verifique se o servidor está rodando.',
+                text: 'Não foi possível conectar ao servidor. Verifique se o servidor está rodando.',
                 icon: 'error',
                 confirmButtonText: 'OK',
                 confirmButtonColor: cores.primary.accent,

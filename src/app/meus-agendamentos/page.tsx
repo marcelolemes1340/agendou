@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Swal from 'sweetalert2';
-import { getAuthHeaders, getUsuarioLogado, verifyToken, debugToken, forceNewLogin } from '../../lib/auth';
+import { getAuthHeaders, getUsuarioLogado, verifyToken, debugToken} from '../../lib/auth';
 import { cores } from '../../lib/cores';
 
 interface Agendamento {
@@ -33,7 +33,7 @@ export default function MeusAgendamentos() {
     const router = useRouter();
     const [agendamentos, setAgendamentos] = useState<Agendamento[]>([]);
     const [loading, setLoading] = useState(true);
-    const [usuario, setUsuario] = useState<any>(null);
+    const [, setUsuario] = useState(null);
     const [isVisible, setIsVisible] = useState(false);
     const [avaliando, setAvaliando] = useState<number | null>(null);
     const [avaliacaoForm, setAvaliacaoForm] = useState<AvaliacaoData>({
@@ -605,7 +605,7 @@ export default function MeusAgendamentos() {
                                                             </div>
                                                             {agendamento.avaliacao.comentario && (
                                                                 <p className="text-gray-300 text-sm">
-                                                                    "{agendamento.avaliacao.comentario}"
+                                                                    {agendamento.avaliacao.comentario}
                                                                 </p>
                                                             )}
                                                             <p className="text-xs text-gray-400 mt-1">

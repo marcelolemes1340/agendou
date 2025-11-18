@@ -167,11 +167,11 @@ export default function Cadastro() {
                     color: cores.neutral.white,
                 });
             }
-        } catch (error: any) {
+        } catch (error) {
             console.error('💥 Erro no cadastro:', error);
             await Swal.fire({
                 title: 'Erro de Conexão!',
-                text: error.message || 'Não foi possível conectar ao servidor. Verifique se o servidor está rodando.',
+                text:   'Não foi possível conectar ao servidor. Verifique se o servidor está rodando.',
                 icon: 'error',
                 confirmButtonText: 'OK',
                 confirmButtonColor: cores.primary.accent,

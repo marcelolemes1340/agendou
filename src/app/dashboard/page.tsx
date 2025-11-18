@@ -57,24 +57,6 @@ export default function Dashboard() {
         checkAuth();
     }, [router]);
 
-    const handleLogout = async () => {
-        const result = await Swal.fire({
-            title: 'Sair?',
-            text: 'Deseja realmente sair da sua conta?',
-            icon: 'question',
-            showCancelButton: true,
-            confirmButtonColor: cores.primary.accent,
-            cancelButtonColor: cores.neutral.medium,
-            confirmButtonText: 'Sim, sair',
-            cancelButtonText: 'Cancelar',
-            background: cores.background.card,
-            color: cores.neutral.white,
-        });
-
-        if (result.isConfirmed) {
-            logout();
-        }
-    };
 
     const handleVerAgendamentos = () => {
         router.push('/meus-agendamentos');

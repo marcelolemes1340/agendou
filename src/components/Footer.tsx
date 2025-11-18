@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import { cores } from '@/lib/cores';
 
 export default function Footer() {
-    const [currentYear, setCurrentYear] = useState(new Date().getFullYear());
+    const [currentYear] = useState(new Date().getFullYear());
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {

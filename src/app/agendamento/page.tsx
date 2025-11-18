@@ -28,7 +28,7 @@ interface Barbeiro {
 export default function Agendamento() {
     const router = useRouter();
     const searchParams = useSearchParams();
-    const [userName, setUserName] = useState('');
+    const [, setUserName] = useState('');
     const [userEmail, setUserEmail] = useState('');
     const [agendamentos, setAgendamentos] = useState<Agendamento[]>([]);
     const [barbeiros, setBarbeiros] = useState<Barbeiro[]>([]);

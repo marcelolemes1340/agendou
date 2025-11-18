@@ -6,7 +6,7 @@ export function getToken(): string | null {
     return null;
 }
 
-export function getUsuarioLogado(): any {
+export function getUsuarioLogado() {
     if (typeof window !== 'undefined') {
         let usuarioStr = localStorage.getItem('usuarioLogado');
         if (!usuarioStr) {
