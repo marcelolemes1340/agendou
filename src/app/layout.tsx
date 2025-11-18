@@ -4,9 +4,14 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "Barbearia Agendou",
-  description: "Barbearia em Pelotas-RS",
-  keywords: ["Barbearia", "Agendamento", "Serviços", "Corte de Cabelo", "Barba"],
+  title: "Agendou - Barbearia Premium",
+  description: "Barbearia de elite em Pelotas-RS. Cortes precisos, estilo único e experiência premium.",
+  keywords: ["Barbearia", "Agendamento", "Corte Premium", "Pelotas", "Estilo"],
+  openGraph: {
+    title: "Agendou - Barbearia Premium",
+    description: "Transformando estilo em experiência. Sua barbearia de elite em Pelotas.",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
@@ -15,14 +20,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="pt-br">
-      <body suppressHydrationWarning={true}>
+    <html lang="pt-br" className="scroll-smooth">
+      <body suppressHydrationWarning={true} className="antialiased">
         <Header />
-        {children}
+        <main className="pt-20">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>
   );
 }
-
-
