@@ -127,7 +127,7 @@ export default function Principal() {
       experience: '10 anos'
     },
     {
-      name: 'Lucas',
+      name: 'Rafael',
       specialty: 'Estilos Modernos',
       rating: '⭐ 4.8',
       type: 'professional',
