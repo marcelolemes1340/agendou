@@ -1,9 +1,9 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import { getUsuarioLogado, logout, verifyToken } from '../../lib/auth';
+import { getUsuarioLogado, verifyToken } from '../../lib/auth';
 import { cores } from '@/lib/cores';
-import Swal from 'sweetalert2';
+
 
 interface Usuario {
     id: number;

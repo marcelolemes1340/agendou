@@ -167,6 +167,7 @@ export default function Contato() {
                 });
             }
         } catch (error ) {
+            console.error('Erro ao enviar a mensagem:', error);
             await Swal.fire({
                 title: 'Erro de Conexão',
                 text: 'Não foi possível conectar ao servidor. Verifique sua conexão e tente novamente.',
