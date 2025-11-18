@@ -1,5 +1,5 @@
 'use client';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import Swal from 'sweetalert2';
 import { getUsuarioLogado, verifyToken } from '../../lib/auth';
@@ -467,6 +467,7 @@ async function handleAgendar(e: React.FormEvent) {
     }
 
     return (
+        <Suspense>
         <div
             className="min-h-screen py-8 px-4"
             style={{
@@ -766,5 +767,6 @@ async function handleAgendar(e: React.FormEvent) {
                 </div>
             </div>
         </div>
+        </Suspense>
     );
 }
