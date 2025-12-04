@@ -23,14 +23,34 @@ export default function Cadastro() {
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const { id, value } = e.target;
+        let truncatedValue = value;
+        
+        switch(id) {
+            case 'email':
+                truncatedValue = value.slice(0, 50);
+                break;
+            case 'telefone':
+                truncatedValue = value.slice(0, 15);
+                break;
+            case 'cpf':
+                truncatedValue = value.slice(0, 14);
+                break;
+            case 'senha':
+                truncatedValue = value.slice(0, 22);
+                break;
+            case 'nome':
+                truncatedValue = value.slice(0, 100);
+                break;
+        }
+        
         setFormData(prev => ({
             ...prev,
-            [id]: value
+            [id]: truncatedValue
         }));
     };
 
     const formatarTelefone = (value: string) => {
-        const numbers = value.replace(/\D/g, '');
+        const numbers = value.replace(/\D/g, '').slice(0, 11);
         if (numbers.length <= 11) {
             if (numbers.length <= 10) {
                 return numbers.replace(/(\d{2})(\d{4})(\d{4})/, '($1) $2-$3');
@@ -41,7 +61,7 @@ export default function Cadastro() {
     };
 
     const formatarCPF = (value: string) => {
-        const numbers = value.replace(/\D/g, '');
+        const numbers = value.replace(/\D/g, '').slice(0, 11);
         if (numbers.length <= 11) {
             return numbers.replace(/(\d{3})(\d{3})(\d{3})(\d{2})/, '$1.$2.$3-$4');
         }
@@ -50,12 +70,12 @@ export default function Cadastro() {
 
     const handleTelefoneChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const formatted = formatarTelefone(e.target.value);
-        setFormData(prev => ({ ...prev, telefone: formatted }));
+        setFormData(prev => ({ ...prev, telefone: formatted.slice(0, 15) }));
     };
 
     const handleCpfChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         const formatted = formatarCPF(e.target.value);
-        setFormData(prev => ({ ...prev, cpf: formatted }));
+        setFormData(prev => ({ ...prev, cpf: formatted.slice(0, 14) }));
     };
 
     const validarFormulario = () => {
@@ -238,6 +258,7 @@ export default function Cadastro() {
                                     onChange={handleChange}
                                     required
                                     disabled={loading}
+                                    maxLength={100}
                                     className="w-full px-3 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20 outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
                                 />
                             </div>
@@ -255,6 +276,7 @@ export default function Cadastro() {
                                     onChange={handleChange}
                                     required
                                     disabled={loading}
+                                    maxLength={50}
                                     className="w-full px-3 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20 outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
                                 />
                             </div>
@@ -271,6 +293,7 @@ export default function Cadastro() {
                                     value={formData.telefone}
                                     onChange={handleTelefoneChange}
                                     disabled={loading}
+                                    maxLength={15}
                                     className="w-full px-3 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20 outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
                                 />
                             </div>
@@ -306,6 +329,7 @@ export default function Cadastro() {
                                     required
                                     disabled={loading}
                                     minLength={6}
+                                    maxLength={22}
                                     className="w-full px-3 py-2 rounded-lg bg-white/5 backdrop-blur-sm border border-white/20 text-white placeholder-gray-400 focus:border-[#D4AF37] focus:ring-1 focus:ring-[#D4AF37]/20 outline-none transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-base"
                                 />
                                 <p className="mt-1 text-xs text-[#D4AF37]">
